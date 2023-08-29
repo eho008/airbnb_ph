@@ -1,9 +1,25 @@
-<h1>Flats</h1>
-
-<% @flats.each do |flat| %>
-  <%= flat.name %>
-  <%= flat.location %>
-  <%= flat.price_per_night %>
-  <%= flat.description %>
-  <%= flat.property_type %>
-<% end %>
+  <div class="container">
+      <h1>Rent your rollercoaster today!</h1>
+      <h2>Now available in 5 countries</h2>
+      <%# <p>Find me in app/views/pages/home.html.erb</p> %>
+    <div>
+      <div class="cards d-flex">
+        <div clas="filter_card">
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="cards">
+        <% @rollercoasters.each do |rc| %>
+          <div class="card_category">
+            <img src="https://images.unsplash.com/photo-1516051662687-567d7c4e8f6a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=3775&q=80" alt="Card image cap">
+            <div class="card_description">
+              <h3><%= rc.name %></h3>
+              <p> <%= rc.description %></p>
+              <p> $<%= rc.price %>/day</p>
+              <p> <%= rc.location %></p>
+            <% end %>
+            </div>
+          </div>
+      </div>
+    </div>
