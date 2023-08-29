@@ -1,9 +1,27 @@
-
-<h1>Rollercoasters</h1>
-
-<% @rollercoasters.each do |rollercoaster| %>
-  <%= rollercoaster.name %>
-  <%= rollercoaster.location %>
-  <%= rollercoaster.price %>
-  <%= rollercoaster.description %>
-<% end %>
+  <div class="container">
+      <h1>Rent your rollercoaster today!</h1>
+      <h2>Now available in 5 countries</h2>
+      <%# <p>Find me in app/views/pages/home.html.erb</p> %>
+    <div>
+      <div class="cards d-flex">
+        <%# <div clas="filter_card">
+        </div> %>
+      </div>
+    </div>
+    <div>
+      <div class="cards">
+        <% @rollercoasters.each do |rc| %>
+          <div class="card_category">
+            <%= image_tag url_for(rc.photos.first)%>
+            <div class="card_description">
+              <h3><%= rc.name %></h3>
+              <p> <%= rc.description %></p>
+              <div class="price_and_address">
+                <p> $<%= rc.price %>/day</p>
+                <p> <i class="fa-solid fa-location-dot"></i> <%= rc.location %></p>
+              </div>
+            </div>
+          </div>
+          <% end %>
+      </div>
+    </div>
