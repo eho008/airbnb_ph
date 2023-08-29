@@ -40,10 +40,10 @@ Rollercoaster.create!(id: 5, user: User.find(5), name: "Fasten your seatbelts", 
 Rollercoaster.create!(id: 6, user: User.find(6), name: "Smile!", location: "Malcom X av, New York", price: 180, description: "This ride takes photos at every turn")
 
 puts "Creating Bookings....."
-Booking.create!(user_id: 1, rollercoaster_id: 1, date_begin: DateTime.new(2023, 9, 1, 1), date_end: DateTime.new(2023, 9, 5, 1))
-Booking.create!(user_id: 2, rollercoaster_id: 2, date_begin: DateTime.new(2023, 9, 8, 1) , date_end: DateTime.new(2023, 9, 13, 1))
-Booking.create!(user_id: 3, rollercoaster_id: 3, date_begin: DateTime.new(2023, 9, 15, 1), date_end: DateTime.new(2023, 9, 17, 1))
-Booking.create!(user_id: 4, rollercoaster_id: 4, date_begin: DateTime.new(2023, 9, 18, 1), date_end: DateTime.new(2023, 9, 20, 1))
+Booking.create!(id: 1, user_id: 1, rollercoaster_id: 1, date_begin: DateTime.new(2023, 9, 1, 1), date_end: DateTime.new(2023, 9, 5, 1))
+Booking.create!(id: 2, user_id: 2, rollercoaster_id: 2, date_begin: DateTime.new(2023, 9, 8, 1) , date_end: DateTime.new(2023, 9, 13, 1))
+Booking.create!(id: 3, user_id: 3, rollercoaster_id: 3, date_begin: DateTime.new(2023, 9, 15, 1), date_end: DateTime.new(2023, 9, 17, 1))
+Booking.create!(id: 4, user_id: 4, rollercoaster_id: 4, date_begin: DateTime.new(2023, 9, 18, 1), date_end: DateTime.new(2023, 9, 20, 1))
 
 puts "Creating Reviews....."
 Review.create!(body: "Amazing best ride ever", rating: 5, booking: Booking.first)
