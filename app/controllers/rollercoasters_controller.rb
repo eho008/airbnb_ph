@@ -1,7 +1,26 @@
 class RollercoastersController < ApplicationController
-  def create
+
+  def index
+    @rollercoasters = Rollercoaster.all
+  end
+
+  def new
     @rollercoaster = Rollercoaster.new
-    @rollercoaster.save
+  end
+
+  def create
+    @rollercoaster = Rollercoaster.new(rollercoaster_params)
+    if @rollercoaster.save
+      redirect_to @rollercoaster, notice: 'Your rollercoaster was created!'
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def rollercoaster_params
+    params.require(:rollercoaster).permit(:name, :location, :price, :description)
   end
 
   def index
