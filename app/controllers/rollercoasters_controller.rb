@@ -8,6 +8,11 @@ class RollercoastersController < ApplicationController
     @rollercoaster = Rollercoaster.new
   end
 
+  def show
+    @rollercoaster = Rollercoaster.find(params[:id])
+    @booking = Booking.new
+  end
+
   def create
     @rollercoaster = Rollercoaster.new(rollercoaster_params)
     if @rollercoaster.save
@@ -20,6 +25,7 @@ class RollercoastersController < ApplicationController
   private
 
   def rollercoaster_params
-    params.require(:rollercoaster).permit(:name, :location, :price, :description)
+    params.require(:rollercoaster).permit(:name, :location, :price, :description, photos: [])
   end
+
 end
