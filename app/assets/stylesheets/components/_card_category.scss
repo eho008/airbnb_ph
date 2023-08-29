@@ -26,4 +26,14 @@
     margin-left: 1rem;
     // position: relative;
   }
+
+  .price_and_address {
+    display: flex;
+    justify-content:space-between;
+    margin-right: 1rem;
+
+    p {
+      font-size: smaller;
+    }
+  }
 }
