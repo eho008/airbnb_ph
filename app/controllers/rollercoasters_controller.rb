@@ -20,10 +20,7 @@ class RollercoastersController < ApplicationController
   private
 
   def rollercoaster_params
-    params.require(:rollercoaster).permit(:name, :location, :price, :description)
+    params.require(:rollercoaster).permit(:name, :location, :price, :description, photos: [])
   end
 
-  def index
-    @rollercoasters = Rollercoaster.all
-  end
 end
