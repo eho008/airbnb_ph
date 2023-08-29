@@ -1,0 +1,29 @@
+.card_category {
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-left: 3rem;
+  margin-right: 3rem;
+
+  img {
+    height: 8rem;
+    display: center;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+
+  .card_description {
+    // flex-grow: 1;
+    margin-left: 1rem;
+    // position: relative;
+  }
+}
