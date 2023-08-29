@@ -20,9 +20,9 @@ User.create!(id: 6, email: "france@gmail.com", password: "425656425")
 
 
 puts "Creating rollercoasters..."
-rollercoaster1 = Rollercoaster.create!(user: User.find(1), name: "We all scream for icecream", location: "7 Boundary St, London E2 7JE", price: 150, description: "Get a tasty icecream after the ride")
+rollercoaster1 = Rollercoaster.create!(user: User.find(1), name: "We all scream for icecream", location: "7 Boundary St, London", price: 150, description: "Get a tasty icecream after the ride")
 rollercoaster1.photos.attach(io: URI.open("https://images.unsplash.com/photo-1580957920608-b5f3844ea00e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2370&q=80"), filename: "icecream.jpg")
-rollercoaster2 = Rollercoaster.create!(user: User.find(2), name: "Russian roulette", location: "56A Shoreditch High St, London E1 6PQ", price: 140, description: "Who's going to survive this ride?")
+rollercoaster2 = Rollercoaster.create!(user: User.find(2), name: "Russian roulette", location: "56A Shoreditch High St, London", price: 140, description: "Who's going to survive this ride?")
 rollercoaster2.photos.attach(io: URI.open("https://images.unsplash.com/photo-1500569051175-dc066c45410d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80"), filename: "russianroulette.jpg")
 rollercoaster3 = Rollercoaster.create!(user: User.find(3), name: "Nice and easy", location: "Jardin Anglaise, Paris", price: 210, description: "A great family-friendly ride for all ages")
 rollercoaster3.photos.attach(io: URI.open("https://images.unsplash.com/photo-1542577731-55541be363d4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2370&q=80"), filename: "niceandeasy.jpg")
