@@ -8,6 +8,10 @@ class RollercoastersController < ApplicationController
     @rollercoaster = Rollercoaster.new
   end
 
+  def show
+    @rollercoaster = Rollercoaster.find(params[:id])
+  end
+
   def create
     @rollercoaster = Rollercoaster.new(rollercoaster_params)
     if @rollercoaster.save
