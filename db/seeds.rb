@@ -19,13 +19,11 @@ User.create!(id: 3, email: "potato@gmail.com", password: "456788")
 User.create!(id: 4, email: "pumpkin@gmail.com", password: "124533415")
 User.create!(id: 5, email: "tomato@gmail.com", password: "56475467")
 User.create!(id: 6, email: "france@gmail.com", password: "425656425")
-
-
 puts "Creating rollercoasters..."
 Rollercoaster.create!(id: 1, user: User.find(1), name: "We all scream for icecream", location: "7 Boundary St, London E2 7JE", price: 150, description: "Get a tasty icecream after the ride")
 Rollercoaster.create!(id: 2, user: User.find(2), name: "Russian roulette", location: "56A Shoreditch High St, London E1 6PQ", price: 140, description: "Who's going to survive this ride?")
 Rollercoaster.create!(id: 3, user: User.find(3), name: "Nice and easy", location: "Jardin Anglaise, Paris", price: 210, description: "A great family-friendly ride for all ages")
-Rollercoaster.create!(id: 4, user: User.find(4), name: "Halloween street", location: "9th av, New York", price: 250, description: "Trick or ride. Better not to eat much beforehand 🤭")
+Rollercoaster.create!(id: 4, user: User.find(4), name: "Halloween street", location: "9th av, New York", price: 250, description: "Trick or ride. Better not to eat much beforehand :kicherndes_gesicht_mit_hand_vor_dem_mund:")
 Rollercoaster.create!(id: 5, user: User.find(5), name: "Fasten your seatbelts", location: "Red Square, Moscow", price: 120, description: "The bumpiest flight of your life. Make sure you buckle up!")
 Rollercoaster.create!(id: 6, user: User.find(6), name: "Smile!", location: "Malcom X av, New York", price: 180, description: "This ride takes photos at every turn")
 
@@ -40,7 +38,5 @@ Review.create!(body: "Amazing best ride ever", rating: 5, booking: Booking.first
 Review.create!(body: "Great ride", rating: 4, booking: Booking.first)
 Review.create!(body: "Boring ride", rating: 2, booking: Booking.first)
 Review.create!(body: "Average Ride", rating: 3, booking: Booking.first)
-
-
 
 puts "Finished!"
