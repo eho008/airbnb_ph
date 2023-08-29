@@ -1,19 +1,23 @@
 class BookingsController < ApplicationController
-  before_action :set_rollercoaster, :set_user, only: %i[new create]
+  before_action :set_rollercoaster, only: %i[new create]
+  before_action :set_user, only: %i[create]
   def new
     @booking = Booking.new
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.rollercoaster = @rollercoaster
     @booking.user = @user
-    @booking.save
-    # if @booking.save
-    #   redirect_to rollercoaster_path(@booking.rollercoaster_id)
-    # else
-    #   render :new, status: :unprocessable_entity
-    # end
+    if @booking.save
+      redirect_to rollercoasters_path(@booking.rollercoaster_id)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
