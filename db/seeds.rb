@@ -34,13 +34,6 @@ rollercoaster5.photos.attach(io: URI.open("https://images.unsplash.com/photo-146
 rollercoaster6 = Rollercoaster.create!(user: User.find(6), name: "Smile!", location: "Ocean Park, Hong Kong", price: 180, description: "This ride takes photos at every turn")
 rollercoaster6.photos.attach(io: URI.open("https://images.unsplash.com/photo-1612276036430-e7240b151bd0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2531&q=80"), filename: "smile.jpg")
 
-
-puts "Creating Bookings....."
-Booking.create!(user_id: 1, rollercoaster_id: 1, date_begin: DateTime.new(2023, 9, 1, 1), date_end: DateTime.new(2023, 9, 5, 1))
-Booking.create!(user_id: 2, rollercoaster_id: 2, date_begin: DateTime.new(2023, 9, 8, 1) , date_end: DateTime.new(2023, 9, 13, 1))
-Booking.create!(user_id: 3, rollercoaster_id: 3, date_begin: DateTime.new(2023, 9, 15, 1), date_end: DateTime.new(2023, 9, 17, 1))
-Booking.create!(user_id: 4, rollercoaster_id: 4, date_begin: DateTime.new(2023, 9, 18, 1), date_end: DateTime.new(2023, 9, 20, 1))
-
 puts "Creating Reviews....."
 Review.create!(body: "Amazing best ride ever", rating: 5, booking: Booking.first)
 Review.create!(body: "Great ride", rating: 4, booking: Booking.first)
