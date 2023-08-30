@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :rollercoasters, only: %i[index show new create] do
-    resources :bookings, only: %i[new create show]
+    resources :bookings, only: %i[new create]
   end
-  resources :bookings, only: %i[show]
+  resources :bookings, only: %i[index show]
 end
