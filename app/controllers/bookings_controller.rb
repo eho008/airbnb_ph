@@ -17,9 +17,9 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.rollercoaster = @rollercoaster
-    @booking.user = @user
+    @booking.user = current_user
     if @booking.save
-      redirect_to rollercoasters_path(@booking.rollercoaster_id)
+      redirect_to rollercoaster_path(@booking.rollercoaster_id)
     else
       render :new, status: :unprocessable_entity
     end
@@ -36,7 +36,7 @@ class BookingsController < ApplicationController
   end
 
   def set_user
-    @rollercoaster = User.find(params[:user_id])
+    @user = current_user
   end
 end
 
