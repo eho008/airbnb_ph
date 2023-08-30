@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
-  def index
-    @booking = Booking.all
+  def show
+    @bookings = Booking.all
+    @rollercoasters = Rollercoaster.all
+  end
 end
