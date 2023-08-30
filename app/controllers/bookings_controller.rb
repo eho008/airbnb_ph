@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     @booking.rollercoaster = @rollercoaster
     @booking.user = current_user
     if @booking.save
-      redirect_to rollercoaster_path(@booking.rollercoaster_id)
+      redirect_to bookings_path(current_user)
     else
       render :new, status: :unprocessable_entity
     end
