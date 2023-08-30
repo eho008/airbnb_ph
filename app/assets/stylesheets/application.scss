@@ -15,3 +15,11 @@
 @import "components/filter_card";
 @import "components/rollercoaster_show";
 @import "components/navbar";
+
+a {
+  text-decoration: none;
+  color: black;
+  &:hover{
+    color:rgb(30, 178, 163);
+  };
+}

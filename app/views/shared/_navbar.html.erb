@@ -3,9 +3,10 @@
     <div class="logo justify-content-start"> <%= link_to "rollerbnb🎢", root_path %></div>
     <div class="links">
       <ul class="m-0">
-        <li> <%= link_to "My bookings",bookings_path %> </li>
         <% if user_signed_in? %>
-          <li><%= link_to "My Rollercoasters!", user_path(current_user) %></li>
+          <li> <%= link_to "My bookings",bookings_path %> </li>
+          <li><%= link_to "My Rollercoasters", user_path(current_user) %></li>
+          <li><%= link_to "Create new rollercoaster", new_rollercoaster_path(@rollercoaster) %></li>
           <% else %>
           <%= link_to "login", new_user_session_path %>
         <% end %>

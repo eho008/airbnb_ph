@@ -11,17 +11,19 @@
     <div>
       <div class="cards">
         <% @rollercoasters.each do |rc| %>
-          <div class="card_category">
-            <%= image_tag url_for(rc.photos.first)%>
-            <div class="card_description">
-              <h3><%= rc.name %></h3>
-              <p> <%= rc.description %></p>
-              <div class="price_and_address">
-                <p> $<%= rc.price %>/day</p>
-                <p> <i class="fa-solid fa-location-dot"></i> <%= rc.location %></p>
+          <%= link_to rollercoaster_path(rc) do %>
+            <div class="card_category">
+              <%= image_tag url_for(rc.photos.first)%>
+              <div class="card_description">
+                <h3><%= rc.name %></h3>
+                <p> <%= rc.description %></p>
+                <div class="price_and_address">
+                  <p> $<%= rc.price %>/day</p>
+                  <p> <i class="fa-solid fa-location-dot"></i> <%= rc.location %></p>
+                </div>
               </div>
             </div>
-          </div>
           <% end %>
+        <% end %>
       </div>
     </div>

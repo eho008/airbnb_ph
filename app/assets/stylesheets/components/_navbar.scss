@@ -36,3 +36,11 @@
 .navbar .links {
   vertical-align: middle;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+  &:hover{
+    color:rgb(30, 178, 163);
+  };
+}

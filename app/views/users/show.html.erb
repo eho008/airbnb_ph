@@ -1,9 +1,9 @@
 <h2 class='text-center'>My Rollercoasters</h2>
   <% @rollercoasters.each do |rollercoaster|%>
   <% if rollercoaster.user == current_user %>
-  <%= rollercoaster.name%>
-  <%= rollercoaster.location %>
-  <%= rollercoaster.price %>
-  <%= rollercoaster.description %>
+  <h2><%= rollercoaster.name%> </h2>
+  <p><%= rollercoaster.location %></p>
+  <p><%= rollercoaster.price %></p>
+  <p><%= rollercoaster.description %></p>
   <% end %>
 <% end %>
