@@ -1,6 +1,11 @@
 class BookingsController < ApplicationController
   before_action :set_rollercoaster, only: %i[new create]
   before_action :set_user, only: %i[create]
+
+  def index
+    @bookings = Booking.where(user: current_user)
+  end
+
   def new
     @booking = Booking.new
   end
