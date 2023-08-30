@@ -1,0 +1,21 @@
+
+<div class="m-3">
+  <div class="description">
+    <h1><%= @rollercoaster.name %></h1>
+    <div class="rollercoaster_show">
+      <%= image_tag url_for(@rollercoaster.photos.first)%>
+    </div>
+    <div class="">
+      <p><i class="fa-solid fa-location-dot"></i> <%= @rollercoaster.location %></p>
+      <h2>About this ride</h2>
+      <p><%= @rollercoaster.description %></p>
+      <p> $ <%= @rollercoaster.price %></p>
+    </div>
+  </div>
+</div>
+
+<%= render "bookingform" %>
+
+<% @rollercoaster.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>

@@ -1,0 +1,9 @@
+<h1>Bookings</h1>
+
+<% @bookings.each do |booking| %>
+  <div>
+    <%= booking.rollercoaster.name %>
+    <%= booking.date_begin %>
+    <%= booking.date_end %>
+  </div>
+<% end %>
