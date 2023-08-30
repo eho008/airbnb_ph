@@ -5,7 +5,7 @@
       <ul class="m-0">
         <li> <%= link_to "My bookings",bookings_path %> </li>
         <% if user_signed_in? %>
-          <li><%= link_to "My Rollercoasters", user_path(current_user) %></li>
+          <li><%= link_to "My Rollercoasters!", user_path(current_user) %></li>
           <% else %>
           <%= link_to "login", new_user_session_path %>
         <% end %>
