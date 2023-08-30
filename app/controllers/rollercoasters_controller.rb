@@ -26,10 +26,6 @@ class RollercoastersController < ApplicationController
     end
   end
 
-  def show
-    @rollercoaster = Rollercoaster.find_by_id(params[:id])
-  end
-
   private
 
   def rollercoaster_params
