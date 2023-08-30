@@ -1,5 +1,5 @@
 
-<div class="m-3">
+<div class="m-3 col-6">
   <div class="description">
     <h1><%= @rollercoaster.name %></h1>
     <div class="rollercoaster_show">
@@ -10,8 +10,14 @@
       <h2>About this ride</h2>
       <p><%= @rollercoaster.description %></p>
       <p> $ <%= @rollercoaster.price %></p>
-    </div>
+      <h3>What other riders think</h3>
+      <div>
+        <% @reviews.each do |review| %>
+        <p><%= review.body %></p>
+      </div>
+        <% end %>
+  </div>
+  <div class="col-6 my-3">
+    <%= render "bookingform" %>
   </div>
 </div>
-
-<%= render "bookingform" %>

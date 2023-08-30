@@ -1,11 +1,9 @@
 class UsersController < ApplicationController
-<<<<<<< HEAD
   def show
     @bookings = Booking.all
     @rollercoasters = Rollercoaster.all
-=======
+  end
   def index
     @booking = Booking.all
->>>>>>> master
   end
 end
