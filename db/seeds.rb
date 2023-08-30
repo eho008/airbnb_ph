@@ -36,9 +36,6 @@ rollercoaster6.photos.attach(io: URI.open("https://images.unsplash.com/photo-161
 
 puts "Creating Bookings....."
 Booking.create!(rollercoaster: Rollercoaster.find(1), user: User.find(1), date_begin: DateTime.new(2023, 9, 1, 1), date_end: DateTime.new(2023, 9, 5, 1))
-Booking.create!(date_begin: DateTime.new(2023, 9, 8, 1), date_end: DateTime.new(2023, 9, 13, 1))
-Booking.create!(date_begin: DateTime.new(2023, 9, 15, 1), date_end: DateTime.new(2023, 9, 17, 1))
-Booking.create!(date_begin: DateTime.new(2023, 9, 18, 1), date_end: DateTime.new(2023, 9, 20, 1))
 
 puts "Creating Reviews....."
 Review.create!(body: "Amazing best ride ever", rating: 5, booking: Booking.first)
