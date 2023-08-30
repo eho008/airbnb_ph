@@ -7,10 +7,10 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'open-uri'
 puts "Cleaning database..."
+Review.destroy_all
+Booking.destroy_all
 Rollercoaster.destroy_all
 User.destroy_all
-Booking.destroy_all
-Review.destroy_all
 
 puts "Creating users..."
 User.create!(id: 1, email: "hello@gmail.com", password: "123456")
