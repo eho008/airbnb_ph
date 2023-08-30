@@ -12,6 +12,7 @@ class RollercoastersController < ApplicationController
   def show
     @rollercoaster = Rollercoaster.find(params[:id])
     @booking = Booking.new
+    @reviews = @rollercoaster.reviews
   end
 
   def create
