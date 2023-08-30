@@ -1,3 +1,4 @@
+
 <div class="m-3">
   <div class="description">
     <h1><%= @rollercoaster.name %></h1>
@@ -12,3 +13,9 @@
     </div>
   </div>
 </div>
+
+<%= render "bookingform" %>
+
+<% @rollercoaster.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>

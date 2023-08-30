@@ -19,6 +19,7 @@ User.create!(id: 3, email: "potato@gmail.com", password: "456788")
 User.create!(id: 4, email: "pumpkin@gmail.com", password: "124533415")
 User.create!(id: 5, email: "tomato@gmail.com", password: "56475467")
 User.create!(id: 6, email: "france@gmail.com", password: "425656425")
+
 puts "Creating rollercoasters..."
 rollercoaster1 = Rollercoaster.create!(id: 1, user: User.find(1), name: "We all scream for icecream", location: "7 Boundary St, London", price: 150, description: "Get a tasty icecream after the ride")
 rollercoaster1.photos.attach(io: URI.open("https://images.unsplash.com/photo-1580957920608-b5f3844ea00e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2370&q=80"), filename: "icecream.jpg")
@@ -35,10 +36,10 @@ rollercoaster6.photos.attach(io: URI.open("https://images.unsplash.com/photo-161
 
 
 puts "Creating Bookings....."
-Booking.create!(user_id: 1, rollercoaster_id: 1, date_begin: DateTime.new(2023, 9, 1, 1), date_end: DateTime.new(2023, 9, 5, 1))
-Booking.create!(user_id: 2, rollercoaster_id: 2, date_begin: DateTime.new(2023, 9, 8, 1) , date_end: DateTime.new(2023, 9, 13, 1))
-Booking.create!(user_id: 3, rollercoaster_id: 3, date_begin: DateTime.new(2023, 9, 15, 1), date_end: DateTime.new(2023, 9, 17, 1))
-Booking.create!(user_id: 4, rollercoaster_id: 4, date_begin: DateTime.new(2023, 9, 18, 1), date_end: DateTime.new(2023, 9, 20, 1))
+Booking.create!(id: 1, user_id: 1, rollercoaster_id: 1, date_begin: DateTime.new(2023, 9, 1, 1), date_end: DateTime.new(2023, 9, 5, 1))
+Booking.create!(id: 2, user_id: 2, rollercoaster_id: 2, date_begin: DateTime.new(2023, 9, 8, 1) , date_end: DateTime.new(2023, 9, 13, 1))
+Booking.create!(id: 3, user_id: 3, rollercoaster_id: 3, date_begin: DateTime.new(2023, 9, 15, 1), date_end: DateTime.new(2023, 9, 17, 1))
+Booking.create!(id: 4, user_id: 4, rollercoaster_id: 4, date_begin: DateTime.new(2023, 9, 18, 1), date_end: DateTime.new(2023, 9, 20, 1))
 
 puts "Creating Reviews....."
 Review.create!(body: "Amazing best ride ever", rating: 5, booking: Booking.first)
