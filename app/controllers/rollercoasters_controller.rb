@@ -1,5 +1,6 @@
 class RollercoastersController < ApplicationController
   before_action :set_user
+  before_action :set_rollercoaster, only: %i[show edit update destroy]
 
   def index
     @rollercoasters = Rollercoaster.all
@@ -9,6 +10,11 @@ class RollercoastersController < ApplicationController
         lng: rc.longitude
       }
     end
+    if params[:query] && params[:query] != ''
+      @rollercoasters = Rollercoaster.search_by_info(params[:query])
+    else
+      @rollercoasters = Rollercoaster.all
+    end
   end
 
   def new
@@ -16,9 +22,16 @@ class RollercoastersController < ApplicationController
   end
 
   def show
-    @rollercoaster = Rollercoaster.find(params[:id])
     @booking = Booking.new
     @reviews = @rollercoaster.reviews
+  end
+
+  def edit
+  end
+
+  def update
+    @rollercoaster.update(rollercoaster_params)
+    redirect_to rollercoaster_path(@rollercoaster)
   end
 
   def create
@@ -26,10 +39,16 @@ class RollercoastersController < ApplicationController
     @rollercoaster.user = current_user
 
     if @rollercoaster.save
-
-      redirect_to rollercoaster_path(@rollercoaster), notice: 'Your rollercoaster was created!'
+      redirect_to user_path(@rollercoaster), notice: 'Your rollercoaster was created!'
     else
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    if @rollercoaster.user == current_user
+      @rollercoaster.destroy
+      redirect_to user_path
     end
   end
 
@@ -39,7 +58,12 @@ class RollercoastersController < ApplicationController
     params.require(:rollercoaster).permit(:name, :location, :price, :description, photos: [])
   end
 
+  def set_rollercoaster
+    @rollercoaster = Rollercoaster.find(params[:id])
+  end
+
   def set_user
     @user = current_user
   end
+
 end

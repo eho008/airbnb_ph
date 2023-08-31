@@ -4,7 +4,7 @@
     <div class="links">
       <ul class="m-0">
         <% if user_signed_in? %>
-          <li> <%= link_to "My bookings",bookings_path %> </li>
+          <li> <%= link_to "My bookings", bookings_path %> </li>
           <li><%= link_to "My Rollercoasters", user_path(current_user) %></li>
           <li><%= link_to "Create new rollercoaster", new_rollercoaster_path(@rollercoaster) %></li>
           <% else %>
