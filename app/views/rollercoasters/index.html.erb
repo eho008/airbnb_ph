@@ -1,29 +1,35 @@
-  <div class="container d- flex pt-4">
-      <h1>Rent your rollercoaster today!</h1>
-      <h2>Now available in 5 countries</h2>
-      <%# <p>Find me in app/views/pages/home.html.erb</p> %>
-    <div class="pb-4">
-      <div class="cards d-flex">
-        <%# <div clas="filter_card">
-        </div> %>
-      </div>
+<div class="container-fluid container-fluid-w1000">
+    <h1>Rent your rollercoaster today!</h1>
+    <h2>Now available in 5 countries</h2>
+    <%# <p>Find me in app/views/pages/home.html.erb</p> %>
+  <div class="pb-4">
+    <div class="cards d-flex">
+      <%# <div clas="filter_card">
+      </div> %>
     </div>
-    <div>
-      <div class="cards">
-        <% @rollercoasters.each do |rc| %>
-          <%= link_to rollercoaster_path(rc) do %>
-            <div class="card_category">
-              <%= image_tag url_for(rc.photos.first)%>
-              <div class="card_description">
-                <h3><%= rc.name %></h3>
-                <p> <%= rc.description %></p>
-                <div class="price_and_address">
-                  <p> $<%= rc.price %>/day</p>
-                  <p> <i class="fa-solid fa-location-dot"></i> <%= rc.location %></p>
-                </div>
+  </div>
+  <div class="content d-flex">
+    <div class="cards">
+      <% @rollercoasters.each do |rc| %>
+        <%= link_to rollercoaster_path(rc) do %>
+          <div class="card_category">
+            <%= image_tag url_for(rc.photos.first)%>
+            <div class="card_description">
+              <h3><%= rc.name %></h3>
+              <p> <%= rc.description %></p>
+              <div class="price_and_address">
+                <p> $<%= rc.price %>/day</p>
+                <p> <i class="fa-solid fa-location-dot"></i> <%= rc.location %></p>
               </div>
             </div>
-          <% end %>
+          </div>
         <% end %>
-      </div>
+      <% end %>
     </div>
+    <div>
+      <%= render 'mapwithrollercoasters' %>
+    </div>
+  </div>
+
+  </div>
+</div>

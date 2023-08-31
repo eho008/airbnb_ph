@@ -3,6 +3,12 @@ class RollercoastersController < ApplicationController
 
   def index
     @rollercoasters = Rollercoaster.all
+    @markers = @rollercoasters.geocoded.map do |rc|
+      {
+        lat: rc.latitude,
+        lng: rc.longitude
+      }
+    end
   end
 
   def new
