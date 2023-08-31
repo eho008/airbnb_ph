@@ -1,0 +1,8 @@
+<div class="container">
+  <h2 class="mt-4">Edit Bookings</h2>
+  <%= simple_form_for(@booking) do |f| %>
+    <%= f.input :date_begin %>
+    <%= f.input :date_end%>
+    <%= f.submit %>
+  <% end %>
+</div>
