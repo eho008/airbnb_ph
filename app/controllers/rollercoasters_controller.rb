@@ -3,7 +3,11 @@ class RollercoastersController < ApplicationController
   before_action :set_rollercoaster, only: %i[show edit update destroy]
 
   def index
-    @rollercoasters = Rollercoaster.all
+    if params[:query] && params[:query] != ''
+      @rollercoasters = Rollercoaster.search_by_info(params[:query])
+    else
+      @rollercoasters = Rollercoaster.all
+    end
   end
 
   def new
