@@ -28,3 +28,7 @@
     <%= render "bookingform" %>
   </div>
 </div>
+
+<% @reviews.each do |review| %>
+<p><%= review.body %>, <%= review.rating %></p>
+<% end  %>
