@@ -3,7 +3,18 @@
     <div class="container">
       <h1>Rent your rollercoaster today!</h1>
       <p>Now available in 5 countries</p>
-      <div class="btn btn-primary"><a href="#search" style="decoration: none">Find your next adrenaline rush</div>
+        <div class="row justify-content-left pt-3">
+          <div class="col-sm-8 my-3">
+            <%= form_with url: "#{rollercoasters_path}#search-section", method: :get, class: "d-flex" do %>
+              <%= text_field_tag :query,
+                    params[:query],
+                    class: "form-control",
+                    placeholder: "Look for your next adrenaline rush"
+                %>
+              <%= submit_tag "Search", name: "", class: "btn btn-primary"%>
+            <% end %>
+          </div>
+        </div>
     </div>
   </div>
       <%# searchbar below %>
@@ -11,20 +22,8 @@
         </div>
       </div>
 <div class="container-fluid container-fluid-w1000 mb-5">
-    <div  class="row justify-content-center pt-5">
-          <div id="search" class="col-sm-8 my-3">
-            <%= form_with url: rollercoasters_path, method: :get, class: "d-flex" do %>
-              <%= text_field_tag :query,
-                    params[:query],
-                    class: "form-control",
-                    placeholder: "Look for your next adrenaline rush"
-                %>
-              <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-            <% end %>
-          </div>
-        </div>
     <div style="text-align:center; margin-top: 3rem; margin-bottom: 3rem">
-      <h1>Available rides</h1>
+      <h1 id="search-section">Available rides</h1>
     </div>
     <div class="content d-flex mt-3">
       <div class="cards">
