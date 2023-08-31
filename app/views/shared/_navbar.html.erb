@@ -4,9 +4,18 @@
     <div class="links">
       <ul class="m-0">
         <% if user_signed_in? %>
-          <li> <%= link_to "My bookings", bookings_path %> </li>
-          <li><%= link_to "My Rollercoasters", user_path(current_user) %></li>
+          <li> <%= link_to "My bookings",bookings_path %> </li>
+          <li><%= link_to "My Rollercoasters", users_path %></li>
           <li><%= link_to "Create new rollercoaster", new_rollercoaster_path(@rollercoaster) %></li>
+          <li><%= link_to "Log out",  destroy_user_session_path, method: :delete %></li>
+          <li>
+          <div>
+            <% if current_user.photo.attached? %>
+              <%= cl_image_tag current_user.photo.key%>
+            <% end %>
+
+          </div>
+          </li>
           <% else %>
           <%= link_to "login", new_user_session_path %>
         <% end %>
