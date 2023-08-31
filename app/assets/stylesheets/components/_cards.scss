@@ -1,7 +1,8 @@
 .cards {
   display: grid;
-  grid-template-columns: 4fr 4fr 4fr;
-  grid-gap: 2rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  flex-grow: 1;
 
   p {
     color: rgb(140, 140, 140);

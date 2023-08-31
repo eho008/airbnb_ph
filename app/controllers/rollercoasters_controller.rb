@@ -3,6 +3,13 @@ class RollercoastersController < ApplicationController
   before_action :set_rollercoaster, only: %i[show edit update destroy]
 
   def index
+    @rollercoasters = Rollercoaster.all
+    @markers = @rollercoasters.geocoded.map do |rc|
+      {
+        lat: rc.latitude,
+        lng: rc.longitude
+      }
+    end
     if params[:query] && params[:query] != ''
       @rollercoasters = Rollercoaster.search_by_info(params[:query])
     else
@@ -58,4 +65,5 @@ class RollercoastersController < ApplicationController
   def set_user
     @user = current_user
   end
+
 end
