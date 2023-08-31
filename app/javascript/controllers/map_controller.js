@@ -11,21 +11,29 @@ export default class extends Controller {
 
   connect() {
     mapboxgl.accessToken = this.apiKeyValue
-    this.#addMarkersToMap()
 
     this.map = new mapboxgl.Map({
       container: this.element,
-      style: "mapbox://styles/devwolf90/cllz149rq00nd01pf8bfkcr5w/draft",
+      style: "mapbox://styles/devwolf90/cllz149rq00nd01pf8bfkcr5w",
       center: [-74.5, 40],
       zoom: 10,
     })
+    this.#addMarkersToMap()
+    this.#fitMapToMarkers()
   }
 
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {
+      console.log(marker)
       new mapboxgl.Marker()
         .setLngLat([ marker.lng, marker.lat ])
         .addTo(this.map)
     })
+  }
+
+  #fitMapToMarkers() {
+    const bounds = new mapboxgl.LngLatBounds()
+    this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
+    this.map.fitBounds(bounds, { padding: 100, maxZoom: 10, duration: 5000 })
   }
 }
