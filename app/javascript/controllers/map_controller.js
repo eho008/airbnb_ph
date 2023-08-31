@@ -8,14 +8,24 @@ export default class extends Controller {
     apiKey: String,
     markers: Array
   }
+
   connect() {
     mapboxgl.accessToken = this.apiKeyValue
+    this.#addMarkersToMap()
 
     this.map = new mapboxgl.Map({
       container: this.element,
       style: "mapbox://styles/devwolf90/cllz149rq00nd01pf8bfkcr5w/draft",
       center: [-74.5, 40],
       zoom: 10,
+    })
+  }
+
+  #addMarkersToMap() {
+    this.markersValue.forEach((marker) => {
+      new mapboxgl.Marker()
+        .setLngLat([ marker.lng, marker.lat ])
+        .addTo(this.map)
     })
   }
 }
