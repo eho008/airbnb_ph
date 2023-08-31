@@ -17,10 +17,14 @@
         <% end %>
       </div>
     </div>
+    <% if @rollercoaster.user == current_user %>
+    <%= link_to rollercoaster_path(@rollercoaster), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+      <i class="fa-solid fs-1 fa-xmark align-items-end" style="color: #1eb2a3;"></i>
+    <% end %>
+    <% end %>
   </div>
 
   <div class="col-6 my-3">
     <%= render "bookingform" %>
   </div>
 </div>
-
