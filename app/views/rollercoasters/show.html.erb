@@ -7,7 +7,14 @@
             <div class="delete_cross">
               <% if @rollercoaster.user == current_user %>
               <%= link_to rollercoaster_path(@rollercoaster), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-                <i class="fa-solid fs-1 fa-xmark align-items-end" style="color: #1eb2a3;"></i>
+                <i class="fa-solid fs-2 fa-xmark align-items-end" style="color: #1eb2a3;"></i>
+                <% end %>
+              <% end %>
+            </div>
+            <div class="edit_pen">
+              <% if @rollercoaster.user == current_user %>
+              <%= link_to edit_rollercoaster_path(@rollercoaster) do %>
+                <i class="fa-solid fs-3 fa-pen-to-square align-items-end" style="color: #1eb2a3;"></i>
                 <% end %>
               <% end %>
             </div>

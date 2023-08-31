@@ -41,8 +41,15 @@
 
   .delete_cross {
     position: absolute;
-    top: 2px;
-    right: 2px;
+    top: 1rem;
+    right: 1rem;
+    text-align: end;
+  }
+
+  .edit_pen {
+    position: absolute;
+    top: 1rem;
+    right: 3rem;
     text-align: end;
   }
 }
