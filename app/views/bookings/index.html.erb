@@ -1,9 +1,10 @@
-<h1>Bookings</h1>
-
-<% @bookings.each do |booking| %>
-  <div>
-   <h2><%= booking.rollercoaster.name %></h2>
-    <p><%= booking.date_begin %></p>
-    <p><%= booking.date_end %></p>
-  </div>
-<% end %>
+<div class="container">
+  <h2 class="mt-4"> My Bookings</h2>
+  <% @bookings.each do |booking| %>
+    <div class="mt-4 shadow-sm p-2 mb-1 rounded card" style="width: 25rem; background: #F5F5DC;">
+      <h4><%= booking.rollercoaster.name %></h4>
+      <p><%= booking.date_begin %></p>
+      <p><%= booking.date_end %></p>
+    </div>
+  <% end %>
+</div>
