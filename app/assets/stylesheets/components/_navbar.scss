@@ -44,3 +44,11 @@ a {
     color:rgb(30, 178, 163);
   };
 }
+
+.navbar img {
+  height: 30px ;
+
+  width: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+}
