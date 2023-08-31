@@ -1,13 +1,33 @@
 <div class="nav-container">
   <div class="navbar d-flex">
     <div class="logo justify-content-start"> <%= link_to "rollerbnb🎢", root_path %></div>
-    <div class="links">
-      <ul class="m-0">
+    <div class="dropdown" id="dropdown" data-controller="dropdown">
+      <button class="btn d-flex" id="btn" data-action="mouseover->dropdown#fire">
+        <i class="fa-solid fa-user"></i>
+        User
+      </button>
+      <ul data-dropdown-target="list" class="m-0 d-none" >
         <% if user_signed_in? %>
-          <li> <%= link_to "My bookings", bookings_path %> </li>
-          <li><%= link_to "My Rollercoasters", user_path(current_user) %></li>
-          <li><%= link_to "Create new rollercoaster", new_rollercoaster_path(@rollercoaster) %></li>
-          <% else %>
+          <li class="d-flex">
+            <%= link_to bookings_path do%>
+              <i class="fa-solid fa-book"></i>
+              My bookings
+            <% end %>
+          </li>
+          <li class="d-flex">
+            <%= link_to user_path(current_user) do%>
+              <i class="fa-solid fa-train fa-shake"></i>
+              My rollercoasters
+            <% end %>
+          </li>
+
+          <li class="d-flex">
+            <%= link_to new_rollercoaster_path(@rollercoaster) do%>
+              <i class="fa-solid fa-circle-plus fa-beat"></i>
+              Add rollercoaster
+            <% end %>
+          </li>
+        <% else %>
           <%= link_to "login", new_user_session_path %>
         <% end %>
       </ul>
