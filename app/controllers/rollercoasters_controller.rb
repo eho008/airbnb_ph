@@ -24,6 +24,12 @@ class RollercoastersController < ApplicationController
   def show
     @booking = Booking.new
     @reviews = @rollercoaster.reviews
+    @markers = [
+      {
+        lat: @rollercoaster.latitude,
+        lng: @rollercoaster.longitude
+      }
+    ]
   end
 
   def edit

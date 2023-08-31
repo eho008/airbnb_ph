@@ -1,30 +1,48 @@
+<div class="container-fluid container-fluid-w1000">
+  <%# next - wrapper %>
+  <div class="justify-content-center">
+    <div class="row mt-3">
+      <div class="d-flex justify-content-center">
+        <div class="card_category_show">
+          <div>
+            <h1><%= @rollercoaster.name %></h1>
+            <div class="rollercoaster_show">
+              <%= image_tag url_for(@rollercoaster.photos.first)%>
+            </div>
+            <div class="">
+              <p><i class="fa-solid fa-location-dot"></i> <%= @rollercoaster.location %></p>
+              <h2>About this ride</h2>
+              <p><%= @rollercoaster.description %></p>
+              <p> $ <%= @rollercoaster.price %></p>
+              <h2>What other riders think</h2>
+              <div>
+                <% @reviews.each do |review| %>
+                <p><em>"<%= review.body %>"</em></p>
+                <% end %>
+              </div>
+            </div>
+            <div class="delete_cross">
+              <% if @rollercoaster.user == current_user %>
+              <%= link_to rollercoaster_path(@rollercoaster), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                <i class="fa-solid fs-1 fa-xmark align-items-end" style="color: #1eb2a3;"></i>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
 
-<div class="m-3 col-6">
-  <div class="description">
-    <h1><%= @rollercoaster.name %></h1>
-    <div class="rollercoaster_show">
-      <%= image_tag url_for(@rollercoaster.photos.first)%>
-    </div>
-    <div class="">
-      <p><i class="fa-solid fa-location-dot"></i> <%= @rollercoaster.location %></p>
-      <h2>About this ride</h2>
-      <p><%= @rollercoaster.description %></p>
-      <p> $ <%= @rollercoaster.price %></p>
-      <h2>What other riders think</h2>
-      <div>
-        <% @reviews.each do |review| %>
-        <p><em>"<%= review.body %>"</em></p>
-        <% end %>
+        </div>
+        <div class="map">
+          <%= render 'mapwithrollercoasters' %>
+        </div>
       </div>
     </div>
-    <% if @rollercoaster.user == current_user %>
-    <%= link_to rollercoaster_path(@rollercoaster), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-      <i class="fa-solid fs-1 fa-xmark align-items-end" style="color: #1eb2a3;"></i>
-    <% end %>
-    <% end %>
+  </div>
+  <div class="d-flex justify-content-center mt-5">
+        <div class="booking_form col-6">
+          <%= render "bookingform" %>
+        </div>
   </div>
 
-  <div class="col-6 my-3">
-    <%= render "bookingform" %>
+
   </div>
 </div>
