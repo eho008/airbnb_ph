@@ -16,11 +16,4 @@
 @import "components/rollercoaster_show";
 @import "components/navbar";
 @import "components/map";
-
-a {
-  text-decoration: none;
-  color: black;
-  &:hover{
-    color:rgb(30, 178, 163);
-  };
-}
+// @import "~swiper/swiper-bundle";
