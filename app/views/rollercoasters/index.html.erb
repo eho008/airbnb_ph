@@ -1,43 +1,55 @@
-<div class="container-fluid container-fluid-w1000">
-    <h1>Rent your rollercoaster today!</h1>
-    <h2>Now available in 5 countries</h2>
-    <%# searchbar below %>
-    <div>
-      <div class="row justify-content-center">
-        <div class="col-sm-8 my-3">
-          <%= form_with url: rollercoasters_path, method: :get, class: "d-flex" do %>
-            <%= text_field_tag :query,
-                  params[:query],
-                  class: "form-control",
-                  placeholder: "Type a keyword"
-              %>
-            <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-          <% end %>
+
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1615568926456-ce017e92a93a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=4031&q=80);">
+    <div class="container">
+      <h1>Rent your rollercoaster today!</h1>
+      <p>Now available in 5 countries</p>
+      <div class="btn btn-primary"><a href="#search" style="decoration: none">Find your next adrenaline rush</div>
+    </div>
+  </div>
+      <%# searchbar below %>
+      <div>
         </div>
       </div>
+<div class="container-fluid container-fluid-w1000 mb-5">
+    <div  class="row justify-content-center pt-5">
+          <div id="search" class="col-sm-8 my-3">
+            <%= form_with url: rollercoasters_path, method: :get, class: "d-flex" do %>
+              <%= text_field_tag :query,
+                    params[:query],
+                    class: "form-control",
+                    placeholder: "Look for your next adrenaline rush"
+                %>
+              <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+            <% end %>
+          </div>
+        </div>
+    <div style="text-align:center; margin-top: 3rem; margin-bottom: 3rem">
+      <h1>Available rides</h1>
     </div>
-  <div class="content d-flex">
-    <div class="cards">
-      <% @rollercoasters.each do |rc| %>
-        <%= link_to rollercoaster_path(rc) do %>
-          <div class="card_category">
-            <%= image_tag url_for(rc.photos.first)%>
-            <div class="card_description">
-              <h3><%= rc.name %></h3>
-              <p> <%= rc.description %></p>
-              <div class="price_and_address">
-                <p> $<%= rc.price %>/day</p>
-                <p> <i class="fa-solid fa-location-dot"></i> <%= rc.location %></p>
+    <div class="content d-flex mt-3">
+      <div class="cards">
+        <% @rollercoasters.each do |rc| %>
+          <%= link_to rollercoaster_path(rc) do %>
+            <div class="card_category">
+              <%= image_tag url_for(rc.photos.first)%>
+              <div class="card_description">
+                <h3><%= rc.name %></h3>
+                <p> <%= rc.description %></p>
+                <div class="price_and_address">
+                  <p> $<%= rc.price %>/day</p>
+                  <p> <i class="fa-solid fa-location-dot"></i> <%= rc.location %></p>
+                </div>
               </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
+      <div>
+        <%= render 'mapwithrollercoasters' %>
+      </div>
     </div>
-    <div>
-      <%= render 'mapwithrollercoasters' %>
+
     </div>
   </div>
 
-  </div>
 </div>
