@@ -5,6 +5,8 @@
 
   <div class="form-inputs">
     <div class='form-group'>
+
+    <%= f.input  :photo, as: :file, :label => "Profile Picture" %>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
