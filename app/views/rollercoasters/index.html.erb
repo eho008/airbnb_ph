@@ -5,13 +5,13 @@
       <p>Now available in 5 countries</p>
         <div class="row justify-content-left pt-3">
           <div class="col-sm-8 my-3">
-            <%= form_with url: "#{rollercoasters_path}#search-section", method: :get, class: "d-flex" do %>
+            <%= form_with url: "#{rollercoasters_path}", method: :get, class: "d-flex" do %>
               <%= text_field_tag :query,
                     params[:query],
                     class: "form-control",
                     placeholder: "Look for your next adrenaline rush"
                 %>
-              <%= submit_tag "Search", name: "", class: "btn btn-primary"%>
+              <%= submit_tag "Search", name: "", class: "btn btn-primary", onclick: "scrollToSection()"%>
             <% end %>
           </div>
         </div>
@@ -21,11 +21,11 @@
       <div>
         </div>
       </div>
-<div class="container-fluid container-fluid-w1000 mb-5">
-    <div style="text-align:center; margin-top: 3rem; margin-bottom: 3rem">
-      <h1 id="search-section">Available rides</h1>
+<div class="container-fluid container-fluid-w1000 mb-5" style="flex-grow: 1">
+    <div style="text-align:center; margin-top: 10rem; margin-bottom: 3rem">
+      <h1 id="search">Available rides</h1>
     </div>
-    <div class="content d-flex mt-3">
+    <div class="content d-flex mt-25">
       <div class="cards">
         <% @rollercoasters.each do |rc| %>
           <%= link_to rollercoaster_path(rc) do %>
@@ -52,3 +52,10 @@
   </div>
 
 </div>
+
+<script>
+    function scrollToSection() {
+        var targetSection = document.getElementById("search");
+        targetSection.scrollIntoView({ behavior: "smooth" });
+    }
+</script>

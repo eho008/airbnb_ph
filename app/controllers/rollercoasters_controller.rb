@@ -45,7 +45,7 @@ class RollercoastersController < ApplicationController
     @rollercoaster.user = current_user
 
     if @rollercoaster.save
-      redirect_to user_path(@rollercoaster), notice: 'Your rollercoaster was created!'
+      redirect_to rollercoaster_path(@rollercoaster), notice: 'Your rollercoaster was created!'
     else
       render :new, status: :unprocessable_entity
     end
