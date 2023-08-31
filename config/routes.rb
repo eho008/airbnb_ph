@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :rollercoasters do
     resources :bookings, only: %i[new create]
   end
-  resources :bookings, only: %i[index show]
-  resources :users, only: [:show]
+  resources :bookings, only: %i[index show edit update destroy] do
+    resources :reviews, only: %i[new create]
+  end
+  resources :users, only: [:index]
 end

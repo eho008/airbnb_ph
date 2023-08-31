@@ -14,6 +14,19 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
   end
 
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    if @booking.update(booking_params)
+      redirect_to bookings_path(current_user)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   def create
     @booking = Booking.new(booking_params)
     @booking.rollercoaster = @rollercoaster
@@ -23,6 +36,12 @@ class BookingsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to booking_path, notice: "Booking was successfully deleted!"
   end
 
   private

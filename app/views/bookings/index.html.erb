@@ -5,6 +5,9 @@
       <h4><%= booking.rollercoaster.name %></h4>
       <p><%= booking.date_begin %></p>
       <p><%= booking.date_end %></p>
+      <%= link_to "Edit", edit_booking_path(booking) %>
+      <%= link_to "Delete", booking_path(booking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      <%= link_to "Add a Review", new_booking_review_path(booking) %>
     </div>
   <% end %>
 </div>
