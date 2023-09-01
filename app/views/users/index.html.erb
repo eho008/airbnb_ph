@@ -1,16 +1,22 @@
-<h2 class='text-center'>My Rollercoasters</h2>
-  <% @rollercoasters.each do |rollercoaster|%>
-  <div>
-    <%= link_to rollercoaster_path(rollercoaster) do%>
-      <% if rollercoaster.user == current_user %>
-        <h2><%= rollercoaster.name%> </h2>
-        <p><%= rollercoaster.location %></p>
-        <p><%= rollercoaster.price %></p>
-        <p><%= rollercoaster.description %></p>
-        <%= link_to rollercoaster_path(rollercoaster), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-            <i class="fa-solid fs-1 fa-xmark align-items-end" style="color: #1eb2a3;"></i>
+<div class="container">
+  <h2>My Rollercoasters</h2>
+  <div class= "card_category_show w-50">
+    <% @rollercoasters.each do |rollercoaster|%>
+    <div>
+      <%= link_to rollercoaster_path(rollercoaster) do%>
+        <% if rollercoaster.user == current_user %>
+          <h3><%= rollercoaster.name%> </h3>
+          <p><%= rollercoaster.location %></p>
+          <p><%= rollercoaster.price %></p>
+          <p><%= rollercoaster.description %></p>
+          <div class="delete_cross">
+            <%= link_to rollercoaster_path(rollercoaster), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
+                <i class="fa-solid fs-1 fa-xmark align-items-end" style="color: #1eb2a3;"></i>
+            <% end %>
+          </div>
         <% end %>
       <% end %>
+    </div>
     <% end %>
-<% end %>
   </div>
+</div>
