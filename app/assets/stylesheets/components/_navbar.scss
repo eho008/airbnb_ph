@@ -1,9 +1,9 @@
 .nav-container {
-  height:280px;
+  height:80px;
   border-bottom: 1px solid rgb(210, 210, 210);
   position: sticky;
   top: 0;
-  overflow: hidden;
+  // overflow: hidden;
   width: 100%;
   background-color: white;
   // margin-bottom: 15px;
@@ -25,7 +25,7 @@
 // }
 
 .navbar .logo {
-  // vertical-align: middle;
+  vertical-align: middle;
   font-size: 35px;
   font-weight: bolder;
   position: sticky;
@@ -61,6 +61,8 @@
   border-radius: 30%;
   position: relative;
   margin: auto;
+  height: 50px;
+  width: 50px;
 }
 
 .dropdown {
@@ -75,6 +77,8 @@
   padding: 0.8rem 1rem;
   text-decoration: none;
   color: black;
+  z-index: 999;
+  background-color: white;
 }
 
 .navbar img {
@@ -82,4 +86,14 @@
   width: 30px;
   object-fit: cover;
   border-radius: 50%;
+}
+
+.navbar ul {
+  padding-left: 40px;
+}
+
+.navbar em {
+  align-items: start;
+  color:rgb(30, 178, 163);
+  font-size: 10px;
 }
