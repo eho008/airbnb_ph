@@ -28,6 +28,17 @@
               <h2>About this ride</h2>
               <p><%= @rollercoaster.description %></p>
               <p> $ <%= @rollercoaster.price %></p>
+              <h2>What other riders think</h2>
+                <% if @reviews.exists? %>
+                  <% @reviews.each do |review| %>
+                  <p><em>"<%= review.body %>"</em></p>
+                  <p><%= "⭐" * review.rating %></p>
+                  <% end %>
+                <% else %>
+                <div class="mt2">
+                  <p>Looks like no one has reviewed this ride yet.</p>
+                </div>
+                <% end %>
             </div>
           </div>
 
@@ -40,17 +51,7 @@
   </div>
   <div class="d-flex justify-content-center">
     <div class="d-column  mt-5">
-      <h2>What other riders think</h2>
-      <% if @reviews.exists? %>
-        <% @reviews.each do |review| %>
-        <p><em>"<%= review.body %>"</em></p>
-        <p><%= "⭐" * review.rating %></p>
-        <% end %>
-      <% else %>
-      <div class="mt2">
-        <p>Looks like no one has reviewed this ride yet.</p>
-      </div>
-      <% end %>
+
     </div>
   </div>
   <div class="d-flex justify-content-center mt-5">
