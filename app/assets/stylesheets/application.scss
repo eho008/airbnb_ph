@@ -15,4 +15,14 @@
 @import "components/rollercoaster_show";
 @import "components/navbar";
 @import "components/map";
-// @import "~swiper/swiper-bundle";
+@import "components/card_category_show";
+@import "components/banner";
+@import "components/footer";
+
+a {
+  text-decoration: none;
+  color: black;
+  &:hover{
+    color:rgb(30, 178, 163);
+  };
+}
