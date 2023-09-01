@@ -39,3 +39,20 @@ box-shadow: rgba(0, 0, 0, .1);
   margin-bottom: 10px;
 
 }
+
+.form_container .btn{
+  background-color: #3498db;
+  transition: background-color 0.2s ease;
+  transition-timing-function:
+    cubic-bezier(0.25, 0.1, 0.25, 1);
+    transition-delay: 0.3s;
+    animation: spin 2s linear infinite;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+}
+
+.form_container .btn:hover {
+  background-color:rgb(30, 178, 163);
+}
