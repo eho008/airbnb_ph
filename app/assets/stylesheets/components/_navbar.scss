@@ -1,13 +1,14 @@
 .nav-container {
-  height:80px;
+  height:280px;
   border-bottom: 1px solid rgb(210, 210, 210);
   position: sticky;
   top: 0;
   overflow: hidden;
   width: 100%;
   background-color: white;
-  margin-bottom: 15px;
+  // margin-bottom: 15px;
   z-index: 1;
+
 }
 
 .navbar {
@@ -24,7 +25,7 @@
 // }
 
 .navbar .logo {
-  vertical-align: middle;
+  // vertical-align: middle;
   font-size: 35px;
   font-weight: bolder;
   position: sticky;
