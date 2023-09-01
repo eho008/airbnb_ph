@@ -3,3 +3,7 @@
 @import "avatar";
 @import "form_legend_clear";
 @import "navbar";
+
+.form-control::placeholder {
+  color: #D3D3D3;
+}
