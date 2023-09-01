@@ -3,7 +3,7 @@
   <h2 class="mt-4">Reviews</h2>
   <%= simple_form_for([@booking,@review]) do |f| %>
     <%= f.input :body, label: 'Leave your review:' %>
-    <%= f.input :rating, label: 'Rating:' %>
+    <%= f.input :rating, collection: 1..5, label: 'Rating:' %>
     <%= f.submit %>
   <% end %>
 </div>
