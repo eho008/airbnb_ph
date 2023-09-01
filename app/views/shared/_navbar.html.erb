@@ -3,7 +3,7 @@
     <div class="logo justify-content-start"> <%= link_to "rollerbnb🎢", root_path %></div>
     <div class="dropdown" id="dropdown" data-controller="dropdown">
       <% if user_signed_in? %>
-      <button class="btn d-flex rounded-circle object-fit-cover" id="btn" data-action="mouseover->dropdown#fire">
+      <button class="btn d-flex rounded-circle object-fit-fill" id="btn" data-action="mouseover->dropdown#fire">
             <div>
               <% if current_user.photo.attached? %>
                 <%= cl_image_tag current_user.photo.key%>
