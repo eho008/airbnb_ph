@@ -12,6 +12,12 @@ class RollercoastersController < ApplicationController
     end
     if params[:query] && params[:query] != ''
       @rollercoasters = Rollercoaster.search_by_info(params[:query])
+      @markers = @rollercoasters.geocoded.map do |rc|
+        {
+          lat: rc.latitude,
+          lng: rc.longitude
+        }
+      end
     else
       @rollercoasters = Rollercoaster.all
     end
