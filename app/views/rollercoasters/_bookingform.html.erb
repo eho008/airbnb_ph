@@ -1,9 +1,6 @@
 <h2>Book your adventure</h2>
 <%= simple_form_for [@rollercoaster, @booking] do |f| %>
-  <%= f.input :date_begin,
-            as: :date %>,
-            input_html: { data: { controller: "datepicker" } }
-  <%= f.input :date_end,
-            as: :date %>
+  <%= f.input :date_begin, as: :string, input_html: { data: { controller: "datepicker" } } %>
+  <%= f.input :date_end, as: :string, input_html: { data: { controller: "datepicker" } } %>
   <%= f.submit class: "btn btn-primary"%>
 <% end %>
