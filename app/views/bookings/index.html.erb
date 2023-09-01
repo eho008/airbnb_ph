@@ -6,8 +6,10 @@
       <p class="mt-3">Your booking starts on <%= booking.date_begin.strftime("%A, %d %B %Y") %></p>
       <p>Your booking ends on <%= booking.date_end.strftime("%A, %d %B %Y") %></p>
       <div class="d-flex bd-highlight">
-        <div class="p-2 flex-fill bd-highlight">
-          <%= link_to "Edit", edit_booking_path(booking) %>
+        <div class="edit_pen">
+          <%= link_to edit_booking_path(booking) do%>
+          <i class="fa-solid fs-3 fa-pen-to-square align-items-end" style="color: #1eb2a3;"></i>
+          <% end %>
 
         </div>
         <div class="delete_cross">
