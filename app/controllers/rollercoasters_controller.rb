@@ -12,6 +12,12 @@ class RollercoastersController < ApplicationController
     end
     if params[:query] && params[:query] != ''
       @rollercoasters = Rollercoaster.search_by_info(params[:query])
+      @markers = @rollercoasters.geocoded.map do |rc|
+        {
+          lat: rc.latitude,
+          lng: rc.longitude
+        }
+      end
     else
       @rollercoasters = Rollercoaster.all
     end
@@ -54,7 +60,7 @@ class RollercoastersController < ApplicationController
   def destroy
     if @rollercoaster.user == current_user
       @rollercoaster.destroy
-      redirect_to user_path
+      redirect_to users_path
     end
   end
 
