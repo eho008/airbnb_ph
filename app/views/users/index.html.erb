@@ -1,10 +1,11 @@
 <div class="container">
-  <h2>My Rollercoasters</h2>
-  <div class= "card_category_show w-50">
+  <h2 class = "mt-3">My Rollercoasters</h2>
+
     <% @rollercoasters.each do |rollercoaster|%>
-    <div>
-      <%= link_to rollercoaster_path(rollercoaster) do%>
         <% if rollercoaster.user == current_user %>
+
+      <div class= "card_category_show w-50">
+      <%= link_to rollercoaster_path(rollercoaster) do%>
           <h3><%= rollercoaster.name%> </h3>
           <p><%= rollercoaster.location %></p>
           <p><%= rollercoaster.price %></p>
