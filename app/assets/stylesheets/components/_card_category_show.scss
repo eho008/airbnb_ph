@@ -1,4 +1,4 @@
-.card_category {
+.card_category_show {
   overflow: hidden;
   background-size: cover;
   background-position: center;
@@ -13,6 +13,8 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   // margin-left: 3rem;
   // margin-right: 3rem;
+  position: relative;
+  padding: 2rem;
 
   img {
     height: 15rem;
@@ -35,5 +37,19 @@
     p {
       font-size: smaller;
     }
+  }
+
+  .delete_cross {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    text-align: end;
+  }
+
+  .edit_pen {
+    position: absolute;
+    top: 1rem;
+    right: 3rem;
+    text-align: end;
   }
 }
