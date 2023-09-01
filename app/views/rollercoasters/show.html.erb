@@ -44,7 +44,7 @@
       <% if @reviews.exists? %>
         <% @reviews.each do |review| %>
         <p><em>"<%= review.body %>"</em></p>
-        <p><%= review.rating %></p>
+        <p><%= "⭐" * review.rating %></p>
         <% end %>
       <% else %>
       <div class="mt2">
