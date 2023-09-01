@@ -12,8 +12,8 @@ eagerLoadControllersFrom("controllers", application)
 
 // app/javascript/controllers/index.js
 
-import { application } from "stimulus"
-import Carousel from "stimulus-carousel"
+//import { application } from "stimulus"
+//import Carousel from "stimulus-carousel"
 
-const application = Application.start()
-application.register("carousel", Carousel)
+//const application = Application.start()
+//application.register("carousel", Carousel)
